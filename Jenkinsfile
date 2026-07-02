@@ -107,8 +107,8 @@ pipeline {
             steps {
                 bat '''
                     trivy image --no-progress --exit-code 1 \
-                        --severity HIGH,CRITICAL %IMAGE_REF% \
-                        --skip-version-check flag
+                        --severity HIGH,CRITICAL \
+                        --skip-version-check %IMAGE_REF%
                 '''
             }
         }
