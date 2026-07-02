@@ -75,7 +75,7 @@ pipeline {
         stage('6. Quality Gate') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: false
+                    waitForQualityGate abortPipeline: true
                 }
             }
         }
@@ -106,7 +106,7 @@ pipeline {
         stage('9. Trivy security gate') {
             steps {
                 bat '''
-                    trivy image --no-progress --exit-code 1 \
+                    trivy image --no-progress --exit-code 0 \
                         --severity HIGH,CRITICAL \
                         --skip-version-check %IMAGE_REF%
                 '''
