@@ -4,11 +4,11 @@ pipeline {
     environment {
         DOCKERHUB_CRED = credentials('docker_hub')
 
-        IMAGE_NAME = "${DOCKERHUB_CRED_USR}/tasklist-backend"
+        IMAGE_NAME = "${DOCKERHUB_CRED_USR}/eval-pipeline-backend"
         IMAGE_TAG  = "${BUILD_NUMBER}"
         IMAGE_REF  = "${IMAGE_NAME}:${IMAGE_TAG}"
 
-        SONAR_PROJECT_KEY = "tasklist-backend-auto"
+        SONAR_PROJECT_KEY = "eval-pipeline-backend-auto"
     }
 
     options {
