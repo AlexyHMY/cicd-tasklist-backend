@@ -15,6 +15,7 @@ export default defineConfig({
         "src/__tests__/**",
         "src/server.ts",
         "**/*.config.ts",
+        "src/lib/prisma.ts",
       ],
     },
     reporters: ["default", "junit"],
